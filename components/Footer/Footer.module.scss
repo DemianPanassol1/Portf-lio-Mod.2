@@ -1,0 +1,64 @@
+@use 'styles/variables.module';
+
+.container {
+	width: 100%;
+	background-color: variables.$primary;
+
+	&Body {
+		display: flex;
+		flex-direction: column;
+		width: 90%;
+		max-width: variables.$xl;
+		margin: auto;
+		padding: 2rem 0 3rem;
+
+		@include variables.media('>lg') {
+			flex-direction: row-reverse;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1.5rem 0;
+		}
+
+		&Buttons {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 1.5rem;
+
+			@include variables.media('>lg') {
+				margin-bottom: 0;
+			}
+
+			a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 42px;
+				height: 42px;
+				border: 2px solid variables.$white;
+				border-radius: 50%;
+				color: variables.$white;
+				transition: variables.$transition;
+
+				&:not(:last-of-type) {
+					margin-right: 1.5rem;
+				}
+
+				&:hover {
+					border-color: variables.$secondary;
+					color: variables.$secondary;
+				}
+
+				svg {
+					color: inherit;
+					font-size: 1.2rem;
+				}
+			}
+		}
+		&Text {
+			margin: 0;
+			color: variables.$secondary;
+			text-align: center;
+			white-space: pre-wrap;
+		}
+	}
+}

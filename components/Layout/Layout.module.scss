@@ -1,0 +1,7 @@
+@use 'styles/variables.module';
+
+.container {
+	width: 90%;
+	max-width: variables.$xl;
+	margin: auto;
+}

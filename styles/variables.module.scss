@@ -1,0 +1,58 @@
+@import 'include-media/dist/include-media';
+
+//Colors;
+$primary: #252526;
+$secondary: #e5c365;
+$background: #fcfcfc;
+$black: #212121;
+$white: #ffffff;
+$whatsapp-color: #45d65d;
+
+//Font Family;
+$font-family: 'Fira Code', monospace;
+
+//Font Weight;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+//Font Size;
+$small: 12px;
+$base: 16px;
+$h5: 18px;
+$h5-desktop: 20px;
+$h4: 20px;
+$h4-desktop: 29px;
+$h3: 24px;
+$h3-desktop: 31px;
+$h2: 28px;
+$h2-desktop: 39px;
+$h1: 32px;
+$h1-desktop: 48px;
+
+//Line Height;
+$line-height: 120%;
+
+//Breakpoints;
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+$breakpoints: (
+	xs: $xs,
+	sm: $sm,
+	md: $md,
+	lg: $lg,
+	xl: $xl,
+);
+
+//Transitions;
+$transition: 0.25s all ease-in-out;
+$transition-image: background-image 0.25s ease-in-out;
+$transition-color: color 0.25s ease-in-out;
+$transition-background-color: background-color 0.25s ease-in-out;
+$transition-border: border 0.25s ease-in-out;
+
+//Global Variables;
+$navbar-height: 6rem;

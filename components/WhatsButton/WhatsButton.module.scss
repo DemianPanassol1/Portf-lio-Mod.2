@@ -1,0 +1,29 @@
+@use 'styles/variables.module';
+
+.container {
+	position: fixed;
+	bottom: 8.5rem;
+	right: 1rem;
+	width: 3.125rem;
+	height: 3.125rem;
+	border-radius: 50%;
+	background-color: variables.$whatsapp-color;
+
+	@include variables.media('>md') {
+		right: 2rem;
+	}
+
+	a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		color: variables.$white;
+		width: 100%;
+		height: 100%;
+
+		& svg {
+			font-size: 1.8rem;
+		}
+	}
+}

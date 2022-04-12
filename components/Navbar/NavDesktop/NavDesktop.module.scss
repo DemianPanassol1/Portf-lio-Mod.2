@@ -1,0 +1,34 @@
+@use 'styles/variables.module';
+
+.container {
+	display: none;
+	align-items: center;
+	margin-left: auto;
+
+	@include variables.media('>md') {
+		display: flex;
+	}
+
+	&Link {
+		&:not(:last-of-type) {
+			margin-right: 3rem;
+		}
+
+		&Item {
+			color: variables.$white;
+			transition: variables.$transition-border;
+			padding-bottom: 2px;
+			border-bottom: 2px solid;
+			border-color: transparent;
+
+			&[data-current='true'] {
+				border-color: variables.$secondary;
+			}
+
+			&:hover {
+				color: variables.$secondary;
+				border-color: variables.$secondary;
+			}
+		}
+	}
+}

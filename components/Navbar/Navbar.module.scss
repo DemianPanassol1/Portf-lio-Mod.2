@@ -1,0 +1,67 @@
+@use 'styles/variables.module';
+
+.container {
+	width: 100%;
+	background-color: variables.$primary;
+
+	&Body {
+		width: 90%;
+		max-width: variables.$xl;
+		height: variables.$navbar-height;
+		margin: auto;
+		display: flex;
+
+		&Lang {
+			display: flex;
+			align-items: center;
+			height: fit-content;
+			margin: auto 0;
+			z-index: 10;
+
+			&Container {
+				display: flex;
+				align-items: center;
+
+				&Small {
+					color: variables.$white;
+					height: fit-content;
+					margin-left: 0.5rem;
+					border-bottom: 2px solid;
+					transition: variables.$transition;
+
+					&Deactive {
+						border-color: transparent;
+					}
+
+					&Active {
+						border-color: variables.$secondary;
+					}
+				}
+			}
+
+			&Switch {
+				display: flex;
+				justify-content: flex-start;
+				margin: 0 1rem;
+				border-radius: 2rem;
+				cursor: pointer;
+				padding: 1.5px;
+				background-color: rgb(156 163 175);
+				width: 3rem;
+				height: 1.3rem;
+				position: relative;
+
+				&[data-enabled='true'] {
+					justify-content: flex-end;
+				}
+
+				&Handle {
+					width: 21px;
+					height: 21px;
+					background-color: variables.$white;
+					border-radius: 50%;
+				}
+			}
+		}
+	}
+}
