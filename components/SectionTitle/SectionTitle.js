@@ -6,7 +6,7 @@ import { transitionContent, variantsContent } from '../../lib/helpers';
 
 import styles from './SectionTitle.module.scss';
 
-const SectionTitle = ({ title, subtitle, lang }) => {
+const SectionTitle = ({ lang, subtitle, title }) => {
 	const key1 = lang ? 1 : 2;
 	const key2 = lang ? 3 : 4;
 
@@ -44,9 +44,9 @@ SectionTitle.defaultProps = {
 };
 
 SectionTitle.propTypes = {
-	title: PropTypes.string.isRequired,
-	subtitle: PropTypes.string,
 	lang: PropTypes.bool.isRequired,
+	subtitle: PropTypes.string,
+	title: PropTypes.string.isRequired,
 };
 
 export default SectionTitle;
