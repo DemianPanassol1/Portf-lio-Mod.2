@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import cn from 'classnames';
 
 import styles from './NavMobile.module.scss';
@@ -30,18 +30,16 @@ const NavMobile = () => {
 				</div>
 			</div>
 
-			<AnimatePresence initial={false}>
-				<motion.div
-					animate={toggleNav ? 'open' : 'closed'}
-					variants={variants}
-					transition={{
-						duration: 0.4,
-					}}
-					className={styles.containerNav}
-				>
-					{/* Decidir o que fazer */}
-				</motion.div>
-			</AnimatePresence>
+			<motion.div
+				animate={toggleNav ? 'open' : 'closed'}
+				variants={variants}
+				transition={{
+					duration: 0.4,
+				}}
+				className={styles.containerNav}
+			>
+				{/* Decidir o que fazer */}
+			</motion.div>
 		</Fragment>
 	);
 };

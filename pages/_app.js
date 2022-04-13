@@ -1,53 +1,39 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
+
+import { transitionPage, variantsPage } from '../lib/helpers';
 
 import Layout from '../components/Layout';
 
 import '../styles/globals.scss';
 
-function MyApp({ Component, pageProps, router }) {
+function MyApp({ Component, pageProps }) {
+	const { asPath } = useRouter();
+
 	return (
-		<Layout>
-			<AnimatePresence initial={false} exitBeforeEnter={true}>
+		<AnimatePresence initial={false} exitBeforeEnter={true}>
+			<Layout>
 				<motion.div
-					key={router.route}
+					key={asPath}
 					initial="initial"
 					animate="animate"
 					exit="exit"
-					transition={transition}
-					variants={variants}
+					transition={transitionPage}
+					variants={variantsPage}
 				>
 					<Component {...pageProps} />
 				</motion.div>
-			</AnimatePresence>
-		</Layout>
+			</Layout>
+		</AnimatePresence>
 	);
 }
-
-const variants = {
-	initial: {
-		opacity: 0,
-	},
-	animate: {
-		opacity: 1,
-	},
-	exit: {
-		opacity: 0,
-	},
-};
-
-const transition = {
-	duration: 0.5,
-};
 
 MyApp.propTypes = {
 	Component: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
 		.isRequired,
 	pageProps: PropTypes.shape({}).isRequired,
-	router: PropTypes.shape({
-		route: PropTypes.string.isRequired,
-	}).isRequired,
 };
 
 export default MyApp;
