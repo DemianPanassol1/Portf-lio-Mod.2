@@ -7,47 +7,46 @@ import { transitionContent, variantsContent } from '../../lib/helpers';
 import styles from './SectionTitle.module.scss';
 
 const SectionTitle = ({ title, subtitle, lang }) => {
+	const key1 = lang ? 1 : 2;
+	const key2 = lang ? 3 : 4;
 
-    const key1 = lang ? 1 : 2;
-    const key2 = lang ? 3 : 4;
+	return (
+		<div className={styles.container}>
+			<motion.h2
+				key={key1}
+				initial="initial"
+				animate="animate"
+				transition={transitionContent}
+				variants={variantsContent}
+				className={styles.containerTitle}
+			>
+				{title}
+			</motion.h2>
 
-    return (
-        <div className={styles.container}>
-            <motion.h2
-                key={key1}
-                initial='initial'
-                animate='animate'
-                transition={transitionContent}
-                variants={variantsContent}
-                className={styles.containerTitle}
-            >
-                {title}
-            </motion.h2>
+			<span className={styles.containerLine}></span>
 
-            <span className={styles.containerLine}></span>
-
-            <motion.p
-                key={key2}
-                initial='initial'
-                animate='animate'
-                transition={transitionContent}
-                variants={variantsContent}
-                className={styles.containerSubtitle}
-            >
-                {subtitle}
-            </motion.p>
-        </div>
-    );
+			<motion.p
+				key={key2}
+				initial="initial"
+				animate="animate"
+				transition={transitionContent}
+				variants={variantsContent}
+				className={styles.containerSubtitle}
+			>
+				{subtitle}
+			</motion.p>
+		</div>
+	);
 };
 
 SectionTitle.defaultProps = {
-    subtitle: null
+	subtitle: null,
 };
 
 SectionTitle.propTypes = {
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string,
-    lang: PropTypes.bool.isRequired
+	title: PropTypes.string.isRequired,
+	subtitle: PropTypes.string,
+	lang: PropTypes.bool.isRequired,
 };
 
 export default SectionTitle;

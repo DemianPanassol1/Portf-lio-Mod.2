@@ -14,7 +14,8 @@ const WhatsButton = () => {
 			<a
 				target={'_blank'}
 				referrerPolicy="no-referrer"
-				href="https://bit.ly/3qHdq7f" rel="noreferrer"
+				href="https://bit.ly/3qHdq7f"
+				rel="noreferrer"
 			>
 				<FaWhatsapp
 					title={`${

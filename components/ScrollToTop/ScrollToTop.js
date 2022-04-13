@@ -13,22 +13,20 @@ const ScrollToTop = () => {
 
 	const { lang } = useLanguageContext();
 
-	useEffect(() => {
-		window.addEventListener('scroll', () => {
-			if (window.pageYOffset > 300) {
-				setShow(true);
-			} else {
-				setShow(false);
-			}
-		});
+	const handleShowScrollToTop = () => {
+		if (window.pageYOffset > 300) {
+			setShow(true);
+		} else {
+			setShow(false);
+		}
+	};
 
-		return window.removeEventListener('scroll', () => {
-			if (window.pageYOffset > 300) {
-				setShow(true);
-			} else {
-				setShow(false);
-			}
-		});
+	useEffect(() => {
+		window.addEventListener('scroll', handleShowScrollToTop);
+
+		return () => {
+			window.removeEventListener('scroll', handleShowScrollToTop);
+		};
 	}, []);
 
 	return (

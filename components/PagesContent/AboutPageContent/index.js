@@ -1,3 +1,3 @@
-import AboutPageContent from "./AboutPageContent";
+import AboutPageContent from './AboutPageContent';
 
 export default AboutPageContent;

@@ -17,7 +17,8 @@ const Footer = () => {
 					<a
 						href="https://bit.ly/3tIgCRZ"
 						target="_blank"
-						referrerPolicy="no-referrer" rel="noreferrer"
+						referrerPolicy="no-referrer"
+						rel="noreferrer"
 					>
 						<FaLinkedin
 							title={`${
@@ -31,7 +32,8 @@ const Footer = () => {
 					<a
 						href="https://bit.ly/36vn3yU"
 						target="_blank"
-						referrerPolicy="no-referrer" rel="noreferrer"
+						referrerPolicy="no-referrer"
+						rel="noreferrer"
 					>
 						<FaInstagram
 							title={`${
@@ -45,7 +47,8 @@ const Footer = () => {
 					<a
 						href="https://bit.ly/3LnVvKR"
 						target="_blank"
-						referrerPolicy="no-referrer" rel="noreferrer"
+						referrerPolicy="no-referrer"
+						rel="noreferrer"
 					>
 						<FaGithub
 							title={`${

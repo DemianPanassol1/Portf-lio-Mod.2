@@ -9,7 +9,7 @@ import '../styles/globals.scss';
 function MyApp({ Component, pageProps, router }) {
 	return (
 		<Layout>
-			<AnimatePresence initial={false} exitBeforeEnter={true} >
+			<AnimatePresence initial={false} exitBeforeEnter={true}>
 				<motion.div
 					key={router.route}
 					initial="initial"

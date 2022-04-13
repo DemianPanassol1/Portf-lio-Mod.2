@@ -1,23 +1,23 @@
-@use "styles/variables.module";
+@use 'styles/variables.module';
 
 .container {
-    width: 100%;
-    text-align: center;
+	width: 100%;
+	text-align: center;
 
-    &Title {
-        margin: 0;
-    }
+	&Title {
+		margin: 0;
+	}
 
-    &Line {
-        display: block;
-        width: 16rem;
-        height: 2px;
-        margin: 1.5rem auto 1rem;
-        background-color: variables.$secondary;
-        border-radius: 0.5rem;
-    }
+	&Line {
+		display: block;
+		width: 16rem;
+		height: 2px;
+		margin: 1.5rem auto 1rem;
+		background-color: variables.$secondary;
+		border-radius: 0.5rem;
+	}
 
-    &Subtitle {
-        margin: 0;
-    }
+	&Subtitle {
+		margin: 0;
+	}
 }

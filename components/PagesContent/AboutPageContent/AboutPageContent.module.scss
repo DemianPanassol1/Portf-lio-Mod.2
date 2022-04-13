@@ -1,7 +1,70 @@
-@use "styles/variables.module";
+@use 'styles/variables.module';
 
 .container {
-    width: 100%;
-    height: 300vh;
-    margin-top: 4rem;
+	width: 100%;
+	margin: 4rem 0 6rem;
+
+	&Body {
+		display: flex;
+		margin-top: 2rem;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		@include variables.media('>sm') {
+			margin-top: 3rem;
+		}
+
+		@include variables.media('>lg') {
+			margin-top: 4rem;
+			align-items: flex-start;
+			flex-direction: row-reverse;
+		}
+
+		&Image {
+			position: relative;
+			width: 95%;
+			max-width: 376px;
+			height: 384px;
+		}
+
+		&Content {
+			flex: 1;
+			margin-top: 2.5rem;
+
+			@include variables.media('>lg') {
+				margin-top: 0rem;
+			}
+
+			h4 {
+				margin: 0 0 1.5rem 0;
+				text-align: center;
+
+				@include variables.media('>lg') {
+					text-align: left;
+				}
+			}
+
+			p {
+				margin: 0;
+				text-align: justify;
+
+				@include variables.media('>lg') {
+					text-align: left;
+				}
+
+				&:not(:last-of-type) {
+					margin-bottom: 1rem;
+				}
+			}
+
+			@include variables.media('>sm') {
+				margin-right: 1rem;
+			}
+
+			@include variables.media('>lg') {
+				margin-right: 2rem;
+			}
+		}
+	}
 }
