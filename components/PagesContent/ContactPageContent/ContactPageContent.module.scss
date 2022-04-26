@@ -1,7 +1,68 @@
 @use 'styles/variables.module';
 
+// $widthCard: calc(100vw - variables.xl);
 .container {
 	width: 100%;
-	height: 300vh;
 	margin-top: 4rem;
+
+	&Card {
+		display: block;
+		position: relative;
+		margin-bottom: 6rem;
+		width: 100%;
+		background-color: variables.$secondary;
+
+		&::after {
+			content: '';
+			position: absolute;
+			background-color: variables.$secondary;
+			width: 150vw;
+			height: 100%;
+			left: -50vw;
+			top: 0;
+			z-index: -1;
+		}
+
+		&Body {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 3rem 0;
+
+			@include variables.media('>md') {
+				flex-direction: row;
+			}
+
+			&Item {
+				text-align: center;
+
+				& > svg {
+					width: 3rem;
+					height: 3rem;
+					margin-bottom: 1rem;
+				}
+
+				h4 {
+					margin: 0 0 2rem;
+				}
+
+				& > h5 {
+					margin: 0;
+				}
+
+				&:not(:last-of-type) {
+					margin-bottom: 2rem;
+
+					@include variables.media('>md') {
+						margin: 0 4rem 0 0;
+					}
+
+					@include variables.media('>xl') {
+						margin: 0 9rem 0 0;
+					}
+				}
+			}
+		}
+	}
 }

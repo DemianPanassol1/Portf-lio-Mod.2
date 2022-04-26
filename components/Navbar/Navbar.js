@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { useMediaQuery } from 'react-responsive';
 import { motion } from 'framer-motion';
 import cn from 'classnames';
 
@@ -12,6 +13,7 @@ import styles from './Navbar.module.scss';
 
 const Navbar = () => {
 	const { lang, changeLanguage } = useLanguageContext();
+	const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
 	return (
 		<header className={styles.container}>
@@ -22,7 +24,10 @@ const Navbar = () => {
 							src={'/img/svg/brazil.svg'}
 							width={24}
 							height={24}
-							alt="Bandeira do Brasil"
+							alt={lang ? "Brazil's Flag" : 'Bandeira do Brasil'}
+							title={
+								lang ? "Brazil's Flag" : 'Bandeira do Brasil'
+							}
 						/>
 						<small
 							className={cn(
@@ -63,7 +68,8 @@ const Navbar = () => {
 							src={'/img/svg/united_states.svg'}
 							width={24}
 							height={24}
-							alt="Bandeira dos EUA"
+							alt={lang ? "America's Flag" : 'Bandeira dos EUA'}
+							title={lang ? "America's Flag" : 'Bandeira dos EUA'}
 						/>
 						<small
 							className={cn(
@@ -81,8 +87,7 @@ const Navbar = () => {
 					</div>
 				</div>
 
-				<NavDesktop />
-				<NavMobile />
+				{isMobile ? <NavMobile /> : <NavDesktop />}
 			</section>
 		</header>
 	);

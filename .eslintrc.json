@@ -17,7 +17,7 @@
 		"react/no-unused-prop-types": "error",
 		"react/forbid-foreign-prop-types": "error",
 		"react/forbid-prop-types": "error",
-		"react/sort-prop-types": "error",
+		"react/sort-prop-types": "off",
 		"jsx-a11y/anchor-is-valid": [
 			"error",
 			{

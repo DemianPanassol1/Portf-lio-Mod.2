@@ -1,13 +1,9 @@
 @use 'styles/variables.module';
 
 .container {
-	display: none;
+	display: flex;
 	align-items: center;
 	margin-left: auto;
-
-	@include variables.media('>md') {
-		display: flex;
-	}
 
 	&Link {
 		&:not(:last-of-type) {

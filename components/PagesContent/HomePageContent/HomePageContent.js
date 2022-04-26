@@ -1,5 +1,4 @@
 import React from 'react';
-import { AnimatePresence } from 'framer-motion';
 
 import { useLanguageContext } from '../../../lib/contexts/LanguageProvider';
 
@@ -11,19 +10,15 @@ const HomePageContent = () => {
 	const { lang } = useLanguageContext();
 
 	return (
-		<AnimatePresence initial={false}>
-			<section className={styles.container}>
-				<SectionTitle
-					title={lang ? 'Home Page' : 'Página Principal'}
-					subtitle={
-						lang
-							? 'This is the HomePage'
-							: 'Essa é a página principal'
-					}
-					lang={lang}
-				/>
-			</section>
-		</AnimatePresence>
+		<section className={styles.container}>
+			<SectionTitle
+				title={lang ? 'Home Page' : 'Página Principal'}
+				subtitle={
+					lang ? 'This is the HomePage' : 'Essa é a página principal'
+				}
+				lang={lang}
+			/>
+		</section>
 	);
 };
 

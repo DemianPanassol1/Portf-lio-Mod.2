@@ -10,10 +10,6 @@
 	z-index: 10;
 	cursor: pointer;
 
-	@include variables.media('>md') {
-		display: none;
-	}
-
 	&Box {
 		width: 32px;
 		height: 32px;
@@ -91,16 +87,58 @@
 		z-index: 9;
 		background-color: variables.$primary;
 
-		&[data-enabled='true'] {
-			transform: translateX(0);
-		}
-
-		&[data-enabled='false'] {
-			transform: translateX(100vw);
-		}
-
 		@include variables.media('>sm') {
 			width: 400px;
+		}
+
+		&Body {
+			position: relative;
+			top: 40%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: flex;
+			flex-direction: column;
+			padding: 0;
+			text-align: center;
+
+			&Link {
+				&:not(:last-of-type) {
+					margin-bottom: 3rem;
+				}
+
+				&Item {
+					display: inline-block;
+					color: variables.$white;
+					transition: variables.$transition-color;
+					position: relative;
+
+					&:hover {
+						color: variables.$secondary;
+						border-color: variables.$secondary;
+					}
+
+					&::after {
+						content: '';
+						position: absolute;
+						left: 50%;
+						transform: translateX(-50%);
+						display: block;
+						width: 0%;
+						height: 2px;
+						margin: 0.2rem 0 0;
+						background: variables.$secondary;
+						transition: variables.$transition;
+					}
+
+					&:hover::after {
+						width: 120%;
+					}
+
+					&[data-current='true']::after {
+						width: 120%;
+					}
+				}
+			}
 		}
 	}
 }

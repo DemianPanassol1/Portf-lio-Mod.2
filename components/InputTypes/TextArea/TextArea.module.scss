@@ -1,0 +1,35 @@
+@use 'styles/variables.module';
+
+.container {
+	width: 100%;
+	margin-bottom: 1.5rem;
+	position: relative;
+
+	& > label,
+	& > textarea,
+	& > small {
+		display: block;
+	}
+
+	& > label {
+		margin-bottom: 0.5rem;
+		text-transform: capitalize;
+		font-weight: variables.$font-weight-bold;
+	}
+
+	& > textarea {
+		width: calc(100% - 2rem);
+		height: 9.375rem;
+		border: 1.5px solid variables.$primary;
+		padding: 1rem;
+		word-spacing: -0.25rem;
+		resize: none;
+	}
+
+	& > small {
+		position: absolute;
+		bottom: -1.2rem;
+		left: 0;
+		color: variables.$red-danger;
+	}
+}
